@@ -15,6 +15,7 @@
 NEWLINE = System.getProperty("line.separator")
 INDENT = "    "
 QUOTING = "'"
+ESCAPE = "\\"
 LBRACKET = "["
 RBRACKET = "]"
 VSEPARATOR =","
@@ -36,7 +37,7 @@ ROWS.each { row ->
             .append(QUOTING)
             .append(" => ")
             .append(query ? QUOTING : "")
-            .append(value.replace(QUOTING, QUOTING + QUOTING))
+            .append(value.replace(QUOTING, ESCAPE + QUOTING))
             .append(query ? QUOTING : "")
             .append(VSEPARATOR)
             .append(NEWLINE)
